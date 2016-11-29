@@ -3,13 +3,11 @@
     <div class="item-single-main">
       <div class="image">
         <div class="img-wrap">
-          <% #TODO 商品イメージ %>
-          <%= image_tag("no-image.png" , alt: @item.title) %>
+          <%= image_tag(@item.large_image , alt: @item.title) %>
         </div>
       </div>
       <div class="title">
-        <% #TODO 商品タイトル %>
-        仮タイトル
+        <%= @item.title  %>
       </div>
       <%= render 'action' , item: @item %>
     </div>
@@ -17,8 +15,7 @@
       <div class="side-box">
         <h4 class="side-box-title">Haveしたユーザー</h4>
         <div class="side-box-body">
-          <% # TODO Haveしたユーザー一覧 %>
-
+          <%= @item.user_ids %>
         </div>
       </div>
       <div class="side-box">
