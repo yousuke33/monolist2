@@ -20,16 +20,16 @@
       <div class="side-box">
         <h4 class="side-box-title">Haveしたユーザー</h4>
         <div class="side-box-body">
-          <% @have.each do |have| %>
-            <%= render 'user', user_id: have.user_id %>
+          <% @have.each do |user| %> 
+            <%= link_to gravatar_for(user, size: 30), user %>
           <% end %>
         </div>
       </div>
       <div class="side-box">
         <h4 class="side-box-title">Wantしたユーザー</h4>
         <div class="side-box-body">
-          <% @want.each do |want| %>
-            <%= render 'user', user_id: want.user_id %>
+          <% @want.each do |user| %> 
+           <%= link_to (gravatar_for user, size: 30), user %>
           <% end %>
         </div>
       </div>

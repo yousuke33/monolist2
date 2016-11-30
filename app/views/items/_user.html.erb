@@ -1,1 +1,1 @@
-<%=link_to gravatar_for(@users.find_by(user_id), size: 20) ,user_path%>
+<%=link_to gravatar_for(@users.find_by(user_id), size: 20) ,user_path(id: user_id)%>
