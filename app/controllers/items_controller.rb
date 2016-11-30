@@ -13,7 +13,10 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @users = User.all
     @item = Item.find(params[:id])
+    @have = Have.where(item_id: params[:id])
+    @want = Want.where(item_id: params[:id])
   end
 
   private

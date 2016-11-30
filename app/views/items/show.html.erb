@@ -1,3 +1,8 @@
+<% content_for :head do %>
+  <title><%= @item.title %> - monolist</title>
+  <meta name="description" content="<%= @item.title %>についての情報はこちら。">
+<% end %>
+
 <div class="container">
   <div class="container-inner inner-sm clearfix">
     <div class="item-single-main">
@@ -15,18 +20,21 @@
       <div class="side-box">
         <h4 class="side-box-title">Haveしたユーザー</h4>
         <div class="side-box-body">
-          <%= @item.user_ids %>
+          <% @have.each do |have| %>
+            <%= render 'user', user_id: have.user_id %>
+          <% end %>
         </div>
       </div>
       <div class="side-box">
         <h4 class="side-box-title">Wantしたユーザー</h4>
         <div class="side-box-body">
-          <% # TODO Wantしたユーザー一覧 %>
+          <% @want.each do |want| %>
+            <%= render 'user', user_id: want.user_id %>
+          <% end %>
         </div>
       </div>
       <div class="text-center">
-        <% #TODO 正しいリンク先に %>
-        <%= link_to('楽天詳細ページへ', '#') %>
+        <%= link_to('楽天詳細ページへ', @item.detail_page_url) %>
       </div>
     </div>
   </div>
