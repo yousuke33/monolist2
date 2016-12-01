@@ -23,7 +23,7 @@
                 <div class="title">
                     <%= item.title  %>
                 </div>
-                <%= render 'items/action' , item: item %>
+                <%= render 'items/action' , item: item if current_user %>
             </div>
         </div>
     </div>

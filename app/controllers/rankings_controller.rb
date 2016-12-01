@@ -1,4 +1,6 @@
 class RankingsController < ApplicationController
+    before_action :logged_in_user ,only: [:have, :want]
+    
     def have
         @items = sort("Have")
     end
